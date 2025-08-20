@@ -1,0 +1,62 @@
+appId: com.abcltd.stockflow              
+productName: Stock Flow                  
+copyright: Copyright © 2025 Your Company   
+
+artifactName: stock-flow-setup-${version}.${ext}  
+directories:
+  output: release/build                     
+
+files:
+  - dist/**/*
+  - electron-app/dist/**/*
+  - node_modules/**/*
+  - package.json
+
+extraResources:
+  - from: assets
+    to: assets
+    filter:
+      - '**/*'
+
+# Windows-specific configuration
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64                              
+  icon: release/assets/favicon.ico
+
+# NSIS installer configuration (Windows)
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Stock Flow
+  installerIcon: release/assets/favicon.ico
+  uninstallerIcon: release/assets/favicon.ico
+  installerHeaderIcon: release/assets/favicon.ico
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  menuCategory: Stock Flow
+  displayLanguageSelector: false
+  installerLanguages:
+    - en_US
+  license: false
+  warningsAsErrors: false
+
+# macOS-specific configuration
+mac:
+  target: dmg                              
+  icon: release/assets/icon.png            
+  category: public.app-category.business   
+
+# Linux-specific configuration
+linux:
+  target:
+    - AppImage                             
+  icon: assets
+
+forceCodeSigning: false                        
