@@ -1,8 +1,8 @@
-appId: com.abcltd.stockflow              
-productName: Stock Flow                  
+appId: com.companyname.appname              
+productName: App Name                
 copyright: Copyright © 2025 Your Company   
 
-artifactName: stock-flow-setup-${version}.${ext}  
+artifactName: app-name-setup-${version}.${ext}  
 directories:
   output: release/build                     
 
@@ -34,13 +34,13 @@ nsis:
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
   createStartMenuShortcut: true
-  shortcutName: Stock Flow
+  shortcutName: App Name
   installerIcon: release/assets/favicon.ico
   uninstallerIcon: release/assets/favicon.ico
   installerHeaderIcon: release/assets/favicon.ico
   deleteAppDataOnUninstall: false
   runAfterFinish: true
-  menuCategory: Stock Flow
+  menuCategory: App Name
   displayLanguageSelector: false
   installerLanguages:
     - en_US
@@ -58,5 +58,6 @@ linux:
   target:
     - AppImage                             
   icon: assets
+
 
 forceCodeSigning: false                        
